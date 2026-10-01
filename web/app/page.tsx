@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 // 사진은 아직 미정. 준비되면 public/ 에 넣고 여기 경로를 채우면 된다.
 const HERO_PHOTO: string | null = null;
 const FINAL_PHOTO: string | null = null;
-const STUDENT_PHOTO = '/student.webp';
+const STUDENT_PHOTO: string | null = null; // 없으면 닉네임 첫 글자로 표시
 
 const WEEKS = [
   ['WEEK 01', '입학식', <>같은 반 친구들을 처음 만나요.<br />모든 사람과 한 번씩 이야기하는 것이 첫 번째 목표.</>],
@@ -207,18 +207,21 @@ export default function Home() {
         <h2 className={s.h2}>다시학교에서는<br />새로운 이름으로 만나요.</h2>
         <p className={s.body}>처음부터 실명, 직장, 학교 같은 정보로 사람을 판단하지 않았으면 해요.<br />그래서 다시학교에서는 짧은 닉네임을 사용해요.</p>
         <div className={s.idCard}>
-          <div className={s.idHead}>
-            <span>다시학교 학생증</span>
-            <span>0기 · 1반</span>
+          <div className={s.idBand}>
+            <span className={s.idBandLabel}>다시학교 학생증</span>
+            <span className={s.idBandTitle}>다시학교</span>
+            <span className={s.idBandCorner}>0기</span>
           </div>
-          <div className={s.idRow}>
-            <div className={s.idPhoto}><img src={STUDENT_PHOTO} alt="" /></div>
-            <div className={s.stack} style={{ gap: 4 }}>
-              <span className={s.idName}>모아</span>
-              <span className={s.idTags}>영화 · 카페 · 여행</span>
-            </div>
+          <div className={s.idPhoto}>{STUDENT_PHOTO ? <img src={STUDENT_PHOTO} alt="" /> : <span aria-hidden>모</span>}</div>
+          <div className={s.idIdentity}>
+            <span className={s.idName}>모아</span>
+            <span className={s.idSub}>0기 · 1반</span>
           </div>
-          <p className={s.idQuote}>“갑자기 저녁 먹자고 해도 나올 친구가 있었으면 좋겠어요.”</p>
+          <dl className={s.idRows}>
+            <div><dt>기수</dt><dd>0기 (BETA)</dd></div>
+            <div><dt>반</dt><dd>1반</dd></div>
+            <div><dt>관심사</dt><dd>영화 · 카페 · 여행</dd></div>
+          </dl>
         </div>
         <p className={s.caption}>2~3글자 닉네임 권장. 한 반에서는 동일 닉네임을 사용할 수 없어요.</p>
       </section>

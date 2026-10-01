@@ -603,41 +603,71 @@
 
 .dash { color: #b0b8c1; }
 
-/* 학생증 */
+/* 학생증: 상단 색 띠 + 띠에 걸친 원형 사진 + 이름 + 항목 행 */
 .idCard {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 24px;
+  align-items: center;
   border-radius: 16px;
   background: #fff;
   border: 1px solid #e5e8eb;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(25, 31, 40, 0.06);
 }
 
-.idHead {
+.idBand {
+  position: relative;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 6px;
+  padding: 28px 24px 56px;
+  background: #191f28;
+  color: #fff;
+  text-align: center;
+}
+
+.idBandLabel {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+.idBandTitle {
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+}
+
+.idBandCorner {
+  position: absolute;
+  top: 16px;
+  right: 16px;
   font-size: 12px;
   font-weight: 700;
-  color: #8b95a1;
-}
-
-.idHead > span:first-child { letter-spacing: 0.04em; }
-
-.idRow {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
 }
 
 .idPhoto {
   flex: none;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
   border-radius: 50%;
   overflow: hidden;
-  background: #1f2430;
+  background: #e5e8eb;
+  border: 3px solid #fff;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #8b95a1;
+  letter-spacing: -0.03em;
 }
 
 .idPhoto img {
@@ -647,24 +677,52 @@
   display: block;
 }
 
+.idIdentity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 24px 20px;
+}
+
 .idName {
   font-weight: 800;
   font-size: 24px;
   letter-spacing: -0.03em;
 }
 
-.idTags {
+.idSub {
   font-size: 14px;
   color: #4e5968;
 }
 
-.idQuote {
+.idRows {
+  width: calc(100% - 48px);
+  margin: 0;
+  padding: 16px 0 20px;
+  border-top: 1px solid #f2f4f6;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.idRows > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.idRows dt {
+  font-size: 14px;
+  color: #8b95a1;
+}
+
+.idRows dd {
   margin: 0;
   font-size: 15px;
-  line-height: 1.6;
-  color: #333d4b;
-  padding-top: 14px;
-  border-top: 1px solid #f2f4f6;
+  font-weight: 600;
+  text-align: right;
 }
 
 /* 교칙 */
