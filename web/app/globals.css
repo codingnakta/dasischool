@@ -25,6 +25,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 제목은 단어 중간에서 끊지 않는다 ("쉬웠 / 는데" 방지) */
+h1,
+h2 {
+  word-break: keep-all;
+}
+
 a {
   color: #191f28;
 }
