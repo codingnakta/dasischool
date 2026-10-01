@@ -88,9 +88,9 @@ export default function Home() {
       </section>
 
       <section id="about" className={`${s.section} ${s.alt}`}>
+        <div className={s.figure}>{ABOUT_PHOTO && <img src={ABOUT_PHOTO} alt="" />}</div>
         <h2 className={s.h2}>친구를 만드는 방법이 어려워진 게 아니라<br />친구가 생길 환경이 <span style={{ whiteSpace: 'nowrap' }}>사라진 건 아닐까요?</span></h2>
         <p className={s.body}>학교에서는 친구를 만들기 위해 사람을 찾아다니지 않았어요. 같은 반에 배정되고, 매일 얼굴을 보고, 같이 밥을 먹고, 같은 일을 하다 보니 어느 순간 친구가 되어 있었죠.<br /><br />하지만 성인이 되면 새로운 사람을 반복해서 만나는 환경이 거의 사라져요.</p>
-        <div className={s.figure}>{ABOUT_PHOTO && <img src={ABOUT_PHOTO} alt="" />}</div>
       </section>
 
       <section className={s.section}>
