@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 // 사진은 아직 미정. 준비되면 public/ 에 넣고 여기 경로를 채우면 된다.
-const HERO_PHOTO: string | null = null;
+const HERO_PHOTO: string | null = '/hero.webp';
 const FINAL_PHOTO: string | null = null;
 const STUDENT_PHOTO: string | null = '/student.webp'; // 없으면 닉네임 첫 글자로 표시
 
