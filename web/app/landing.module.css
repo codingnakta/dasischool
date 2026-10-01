@@ -652,6 +652,8 @@
 }
 
 .idPhoto {
+  position: relative;
+  z-index: 1; /* 띠 위로 */
   flex: none;
   width: 80px;
   height: 80px;
