@@ -287,31 +287,20 @@
   text-decoration: none;
 }
 
-/* 문제 제기: 세로 플로우 */
-.flow {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  padding-top: 4px;
+/* 본문 중간 사진 자리 (4:3). 사진이 없으면 연한 회색 상자 */
+.figure {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #e5e8eb;
 }
 
-.flowItem {
-  font-weight: 700;
-  font-size: 17px;
-}
-
-.flowArrow {
-  color: #b0b8c1;
-  font-size: 14px;
-  padding-left: 4px;
-}
-
-.flowEnd {
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.03em;
-  color: var(--accent);
+.figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* 해결: 번호 리스트 */
