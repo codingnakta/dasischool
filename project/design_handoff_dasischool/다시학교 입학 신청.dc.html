@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><title>다시학교 0기 입학 신청</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><style>body{margin:0;background:#fff;color:#191f28;font-family:Pretendard,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:#191f28}a:hover{color:#4e5968}*{box-sizing:border-box}input,textarea,button{font-family:inherit}input:focus,textarea:focus{outline:none;border-color:#191f28!important}input::placeholder,textarea::placeholder{color:#b0b8c1}</style></helmet>
+<div style="max-width:640px;min-height:100vh;margin:0 auto;background:#fff;display:flex;flex-direction:column">
+
+<header style="display:flex;justify-content:space-between;align-items:center;padding:12px 20px;height:61px">
+  <a href="다시학교 랜딩 풀페이지.dc.html" style="font-weight:800;font-size:17px;letter-spacing:-.02em;text-decoration:none">다시학교</a>
+  <sc-if value="{{ inForm }}" hint-placeholder-val="{{ true }}">
+    <span style="font-size:13px;font-weight:600;color:#8b95a1">{{ stepLabel }}</span>
+  </sc-if>
+</header>
+
+<sc-if value="{{ inForm }}" hint-placeholder-val="{{ true }}">
+<div style="height:3px;background:#f2f4f6;margin:0 20px;border-radius:2px;overflow:hidden"><div style="height:100%;background:#191f28;border-radius:2px;transition:width .3s ease;width:{{ progress }}"></div></div>
+</sc-if>
+
+<sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="Intro" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:48px 24px 32px;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <span style="font-size:13px;font-weight:700;color:#8b95a1;letter-spacing:.02em">다시학교 0기 · 입학 신청</span>
+    <h1 style="margin:0;font-weight:800;font-size:32px;line-height:1.28;letter-spacing:-.04em;text-wrap:pretty">같은 반이 되기 전,<br>몇 가지만 알려주세요.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:#4e5968;text-wrap:pretty">10개 질문, 3분 정도 걸려요.<br>선착순이 아니라 지원 내용과 참여 가능한 일정을 보고 반을 구성해요.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:#8b95a1;padding-bottom:8px"><span>· 서울 · 12~16명 · 4주 · 무료</span><span>· 4주 중 최소 3회 이상 참여 가능해야 해요</span></div>
+    <button type="button" onClick="{{ start }}" style="display:flex;align-items:center;justify-content:center;height:56px;background:#191f28;color:#fff;font-size:16px;font-weight:700;border:0;border-radius:12px;cursor:pointer">시작하기</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ inForm }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Question" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:40px 24px 24px;gap:32px">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.32;letter-spacing:-.035em;text-wrap:pretty">{{ q.title }}</h2>
+      <sc-if value="{{ q.hint }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:15px;line-height:1.65;color:#8b95a1">{{ q.hint }}</p></sc-if>
+    </div>
+
+    <sc-if value="{{ q.isText }}" hint-placeholder-val="{{ true }}">
+      <input type="{{ q.inputType }}" value="{{ q.value }}" onChange="{{ q.onChange }}" onKeyDown="{{ onEnter }}" placeholder="{{ q.placeholder }}" maxLength="{{ q.maxLength }}" autoFocus="{{ true }}" style="width:100%;height:56px;padding:0 16px;font-size:17px;border:1.5px solid #e5e8eb;border-radius:12px;background:#fff;color:#191f28">
+    </sc-if>
+
+    <sc-if value="{{ q.isTextarea }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <textarea value="{{ q.value }}" onChange="{{ q.onChange }}" placeholder="{{ q.placeholder }}" rows="6" maxLength="500" autoFocus="{{ true }}" style="width:100%;padding:14px 16px;font-size:16px;line-height:1.65;border:1.5px solid #e5e8eb;border-radius:12px;background:#fff;color:#191f28;resize:none"></textarea>
+        <span style="align-self:flex-end;font-size:12.5px;color:#b0b8c1">{{ q.count }}</span>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ q.isChoice }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ q.options }}" as="o" hint-placeholder-count="4">
+          <button type="button" onClick="{{ o.select }}" aria-pressed="{{ o.selected }}" style="display:flex;justify-content:space-between;align-items:center;min-height:54px;padding:0 18px;text-align:left;font-size:16px;font-weight:600;border-radius:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.color }};border:1.5px solid {{ o.border }}">
+            <span>{{ o.label }}</span><span style="font-size:14px">{{ o.mark }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ q.isSchedule }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:13px;font-weight:700;color:#8b95a1">요일 (복수 선택)</span>
+          <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px">
+            <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+              <button type="button" onClick="{{ d.select }}" aria-pressed="{{ d.selected }}" style="height:48px;font-size:15px;font-weight:700;border-radius:10px;cursor:pointer;background:{{ d.bg }};color:{{ d.color }};border:1.5px solid {{ d.border }}">{{ d.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:13px;font-weight:700;color:#8b95a1">시간대 (복수 선택)</span>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+            <sc-for list="{{ times }}" as="t" hint-placeholder-count="3">
+              <button type="button" onClick="{{ t.select }}" aria-pressed="{{ t.selected }}" style="height:48px;font-size:15px;font-weight:600;border-radius:10px;cursor:pointer;background:{{ t.bg }};color:{{ t.color }};border:1.5px solid {{ t.border }}">{{ t.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ q.isConsent }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;font-size:15px;line-height:1.6;color:#333d4b">
+          <li style="padding:12px 0;border-top:1px solid #f2f4f6">술은 선택이에요.</li>
+          <li style="padding:12px 0;border-top:1px solid #f2f4f6">연애는 자유지만 소개팅 모임은 아니에요.</li>
+          <li style="padding:12px 0;border-top:1px solid #f2f4f6">원하지 않는 연락을 반복하지 않아요.</li>
+          <li style="padding:12px 0;border-top:1px solid #f2f4f6">영업 / 투자 / 종교 권유는 하지 않아요.</li>
+          <li style="padding:12px 0;border-top:1px solid #f2f4f6">사진이나 개인정보를 허락 없이 공유하지 않아요.</li>
+          <li style="padding:12px 0;border-top:1px solid #f2f4f6;border-bottom:1px solid #f2f4f6">불편한 일이 있다면 운영진에게 이야기할 수 있어요.</li>
+        </ul>
+        <button type="button" onClick="{{ toggleRules }}" aria-pressed="{{ rulesAgreed }}" style="display:flex;align-items:center;gap:12px;padding:16px 18px;text-align:left;font-size:15.5px;font-weight:600;border-radius:12px;cursor:pointer;background:{{ rulesBg }};color:#191f28;border:1.5px solid {{ rulesBorder }}">
+          <span style="flex:none;width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;background:{{ rulesBoxBg }};color:#fff;border:1.5px solid {{ rulesBoxBorder }}">{{ rulesMark }}</span>
+          <span>다시학교 교칙을 읽었고 지킬게요.</span>
+        </button>
+        <button type="button" onClick="{{ togglePrivacy }}" aria-pressed="{{ privacyAgreed }}" style="display:flex;align-items:center;gap:12px;padding:16px 18px;text-align:left;font-size:15.5px;font-weight:600;border-radius:12px;cursor:pointer;background:{{ privacyBg }};color:#191f28;border:1.5px solid {{ privacyBorder }}">
+          <span style="flex:none;width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;background:{{ privacyBoxBg }};color:#fff;border:1.5px solid {{ privacyBoxBorder }}">{{ privacyMark }}</span>
+          <span style="display:flex;flex-direction:column;gap:2px"><span>개인정보 수집·이용에 동의해요.</span><span style="font-size:12.5px;font-weight:500;color:#8b95a1">반 배정과 연락 목적으로만 쓰고, 기수 종료 후 파기해요.</span></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="display:flex;gap:8px">
+    <button type="button" onClick="{{ back }}" style="flex:none;width:56px;height:56px;background:#f2f4f6;color:#191f28;font-size:18px;border:0;border-radius:12px;cursor:pointer">←</button>
+    <button type="button" onClick="{{ next }}" disabled="{{ nextDisabled }}" style="flex:1;height:56px;font-size:16px;font-weight:700;border:0;border-radius:12px;cursor:pointer;background:{{ nextBg }};color:{{ nextColor }}">{{ nextLabel }}</button>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Done" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:48px 24px 32px;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <span style="display:inline-flex;align-self:flex-start;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#191f28;color:#fff;font-size:20px">✓</span>
+    <h1 style="margin:0;font-weight:800;font-size:32px;line-height:1.28;letter-spacing:-.04em">{{ doneName }}님,<br>신청이 접수됐어요.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:#4e5968;text-wrap:pretty">선착순이 아니라서 바로 확정되지는 않아요.<br>지원 내용과 참여 가능한 일정을 보고 반을 구성한 뒤, 남겨주신 연락처로 결과를 알려드릴게요.</p>
+    <dl style="margin:0;display:flex;flex-direction:column;padding-top:8px">
+      <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">닉네임</dt><dd style="margin:0;font-size:15.5px;font-weight:600">{{ doneName }}</dd></div>
+      <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">가능 일정</dt><dd style="margin:0;font-size:15.5px;font-weight:600">{{ doneSchedule }}</dd></div>
+      <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6;border-bottom:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">연락처</dt><dd style="margin:0;font-size:15.5px;font-weight:600">{{ doneContact }}</dd></div>
+    </dl>
+    <p style="margin:0;font-size:14px;line-height:1.6;color:#8b95a1">결과 안내까지 보통 1~2주 정도 걸려요. 궁금한 점은 <a href="mailto:dasischool.nakta@gmail.com" style="color:#4e5968">dasischool.nakta@gmail.com</a>으로 보내주세요.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <a href="https://instagram.com/dasihakkyo" style="display:flex;align-items:center;justify-content:center;height:56px;background:#191f28;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px">인스타그램에서 소식 받기</a>
+    <a href="다시학교 랜딩 풀페이지.dc.html" style="display:flex;align-items:center;justify-content:center;height:44px;color:#4e5968;font-size:14.5px;font-weight:500;text-decoration:none">처음으로 돌아가기</a>
+  </div>
+</section>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+class Component extends DCLogic {
+  state = { step: -1, a: { nickname: '', age: '', region: '', days: [], times: [], reason: '', contact: '', email: '', insta: '', source: '', rules: false, privacy: false } };
+  steps = [
+    { key: 'nickname', type: 'text', title: '다시학교에서 쓸 닉네임을 알려주세요.', hint: '2~3글자를 권장해요. 실명, 직장, 학교 대신 이 이름으로 만나요.', placeholder: '예: 모아', maxLength: 6 },
+    { key: 'age', type: 'choice', title: '나이대는 어디쯤인가요?', options: ['20대 초반', '20대 중후반', '30대 초반', '30대 중후반', '40대 이상'] },
+    { key: 'region', type: 'choice', title: '주로 어디서 생활하세요?', hint: '0기는 서울에서 모여요. 모임 장소를 정할 때 참고해요.', options: ['서울 강북권', '서울 강남권', '서울 서부 (마포·영등포 등)', '서울 동부 (성동·광진 등)', '경기 · 인천'] },
+    { key: 'schedule', type: 'schedule', title: '참여할 수 있는 요일과 시간대를 골라주세요.', hint: '4주 중 최소 3회 이상 참여할 수 있어야 해요.' },
+    { key: 'reason', type: 'textarea', title: '다시학교에 신청하는 이유가 궁금해요.', hint: '길지 않아도 괜찮아요. 요즘 어떤 마음인지 편하게 적어주세요.', placeholder: '예: 회사 밖에서 편하게 볼 수 있는 친구가 있었으면 해서요.' },
+    { key: 'contact', type: 'text', title: '결과를 알려드릴 연락처를 남겨주세요.', hint: '전화번호 또는 카카오톡 ID. 반 배정 안내에만 써요.', placeholder: '010-0000-0000 또는 카카오 ID', inputType: 'text', maxLength: 40 },
+    { key: 'email', type: 'text', title: '이메일 주소도 하나 적어주세요.', hint: '연락이 닿지 않을 때 보조로 사용해요.', placeholder: 'name@example.com', inputType: 'email', maxLength: 80 },
+    { key: 'insta', type: 'text', title: '인스타그램 계정이 있다면 알려주세요.', hint: '선택 사항이에요. 비워두셔도 돼요.', placeholder: '@', optional: true, maxLength: 40 },
+    { key: 'source', type: 'choice', title: '다시학교는 어떻게 알게 되셨어요?', options: ['인스타그램', '지인 소개', '검색', '커뮤니티 · 블로그', '기타'] },
+    { key: 'consent', type: 'consent', title: '마지막으로, 교칙을 확인해주세요.', hint: '편하게 친해지기 위해 다 같이 지키는 약속이에요.' },
+  ];
+  dayList = ['월', '화', '수', '목', '금', '토', '일'];
+  timeList = ['오전', '오후', '저녁'];
+  set(key, v) { this.setState(s => ({ a: { ...s.a, [key]: v } })); }
+  toggleIn(key, v) { this.setState(s => { const arr = s.a[key]; return { a: { ...s.a, [key]: arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v] } }; }); }
+  valid(st) {
+    const a = this.state.a;
+    if (st.optional) return true;
+    if (st.type === 'text') { if (st.inputType === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a.email.trim()); return a[st.key].trim().length > 0; }
+    if (st.type === 'textarea') return a.reason.trim().length >= 10;
+    if (st.type === 'choice') return !!a[st.key];
+    if (st.type === 'schedule') return a.days.length > 0 && a.times.length > 0;
+    if (st.type === 'consent') return a.rules && a.privacy;
+    return true;
+  }
+  go(n) { this.setState({ step: n }); window.scrollTo(0, 0); }
+  renderVals() {
+    const { step, a } = this.state;
+    const n = this.steps.length;
+    const inForm = step >= 0 && step < n;
+    const st = inForm ? this.steps[step] : null;
+    const ok = st ? this.valid(st) : false;
+    const last = step === n - 1;
+    const chip = (sel) => ({ bg: sel ? '#191f28' : '#fff', color: sel ? '#fff' : '#191f28', border: sel ? '#191f28' : '#e5e8eb', selected: sel });
+    const box = (on) => ({ bg: on ? '#f2f4f6' : '#fff', border: on ? '#191f28' : '#e5e8eb', boxBg: on ? '#191f28' : '#fff', boxBorder: on ? '#191f28' : '#b0b8c1', mark: on ? '✓' : '' });
+    const r = box(a.rules), p = box(a.privacy);
+    const next = () => { if (!ok) return; if (last) { console.log('[apply] submit', a); this.go(n); } else this.go(step + 1); };
+    const q = st ? {
+      title: st.title, hint: st.hint || '', placeholder: st.placeholder || '', maxLength: st.maxLength || 100,
+      inputType: st.inputType || 'text',
+      isText: st.type === 'text', isTextarea: st.type === 'textarea', isChoice: st.type === 'choice', isSchedule: st.type === 'schedule', isConsent: st.type === 'consent',
+      value: a[st.key] ?? '', onChange: e => this.set(st.key, e.target.value),
+      count: `${(a.reason || '').length} / 500`,
+      options: (st.options || []).map(o => ({ label: o, ...chip(a[st.key] === o), mark: a[st.key] === o ? '✓' : '', select: () => this.set(st.key, o) })),
+    } : {};
+    return {
+      isIntro: step === -1, inForm, isDone: step >= n,
+      stepLabel: inForm ? `${step + 1} / ${n}` : '',
+      progress: inForm ? `${((step + 1) / n) * 100}%` : '0%',
+      q,
+      days: this.dayList.map(d => ({ label: d, ...chip(a.days.includes(d)), select: () => this.toggleIn('days', d) })),
+      times: this.timeList.map(t => ({ label: t, ...chip(a.times.includes(t)), select: () => this.toggleIn('times', t) })),
+      rulesAgreed: a.rules, rulesBg: r.bg, rulesBorder: r.border, rulesBoxBg: r.boxBg, rulesBoxBorder: r.boxBorder, rulesMark: r.mark, toggleRules: () => this.set('rules', !a.rules),
+      privacyAgreed: a.privacy, privacyBg: p.bg, privacyBorder: p.border, privacyBoxBg: p.boxBg, privacyBoxBorder: p.boxBorder, privacyMark: p.mark, togglePrivacy: () => this.set('privacy', !a.privacy),
+      start: () => this.go(0),
+      back: () => this.go(step - 1),
+      next, nextDisabled: !ok,
+      nextLabel: last ? '신청 완료하기' : (st && st.optional && !a[st.key] ? '건너뛰기' : '다음'),
+      nextBg: ok ? '#191f28' : '#e5e8eb', nextColor: ok ? '#fff' : '#b0b8c1',
+      onEnter: e => { if (e.key === 'Enter') { e.preventDefault(); next(); } },
+      doneName: a.nickname || '학생', doneSchedule: [...a.days.map(d => d), a.times.join('·')].filter(Boolean).join(' ') || '-', doneContact: a.contact || '-',
+    };
+  }
+}
+</script>
+</body>
+</html>

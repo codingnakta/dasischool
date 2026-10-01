@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><script src="./image-slot.js"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Gowun+Dodum&display=swap" rel="stylesheet"><style>body{margin:0;background:#e6e1d6;font-family:Pretendard,system-ui,sans-serif}a{color:#3d2f6b}a:hover{color:#2a1f4d}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}.dv-note{max-width:720px;margin:0 0 24px;font:13px/1.6 system-ui,sans-serif;color:rgba(0,0,0,.65)}</style></helmet>
+<section class="dv-turn" id="t6">
+<div class="dv-thd"><a class="dv-tid" href="#t6">6</a><span class="dv-tname">문토 레퍼런스 반영 — 사진 중심, 흰 배경, 도장·종이 요소 전부 제거</span></div>
+<p class="dv-note">문토 페이지 방향: 큰 사진 + 짧고 굵은 산세리프 헤드라인 + 넉넉한 여백 + 숫자 정보 줄. 사진 자리는 비워두었으니 실제 사진을 끌어다 놓으면 됩니다.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="6a"><div class="dv-olabel"><a class="dv-oid" href="#6a">6a</a>풀블리드 사진 위 텍스트 — 가장 문토스러움</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#191f28">
+  <div style="position:relative;height:640px;background:#1f2430">
+    <div style="position:absolute;inset:0"><image-slot id="hero-6a" shape="rect" placeholder="한 반이 함께 있는 사진 (가로)"></image-slot></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 45%,rgba(0,0,0,.72) 100%);pointer-events:none"></div>
+    <div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;color:#fff;pointer-events:none">
+      <div style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</div>
+      <a href="#apply" style="pointer-events:auto;display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#fff;color:#191f28;font-size:13px;font-weight:700;text-decoration:none;border-radius:8px">입학 신청</a>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:0;padding:0 24px 28px;color:#fff;display:flex;flex-direction:column;gap:16px;pointer-events:none">
+      <span style="font-size:13px;font-weight:600;letter-spacing:.02em;opacity:.85">다시학교 0기 학생 모집</span>
+      <h1 style="margin:0;font-weight:800;font-size:34px;line-height:1.28;letter-spacing:-.04em">학교에서는<br>친구 사귀는 게 쉬웠는데.</h1>
+      <p style="margin:0;font-size:15.5px;line-height:1.65;opacity:.9">같은 반이었고, 자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br>어른이 된 지금, 다시 그런 환경을 만들어보려고 해요.</p>
+    </div>
+  </div>
+  <div style="padding:24px 24px 32px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;color:#8b95a1">지역</span><span style="font-weight:700;font-size:15px">서울</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;color:#8b95a1">인원</span><span style="font-weight:700;font-size:15px">12~16명</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;color:#8b95a1">기간</span><span style="font-weight:700;font-size:15px">4주</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;color:#8b95a1">참가비</span><span style="font-weight:700;font-size:15px">무료</span></div>
+    </div>
+    <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:56px;background:#191f28;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px">0기 입학 신청하기</a>
+    <a href="#about" style="display:flex;align-items:center;justify-content:center;height:40px;color:#4e5968;font-size:14.5px;font-weight:500;text-decoration:none">어떤 곳인지 먼저 볼게요 ↓</a>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="6b"><div class="dv-olabel"><a class="dv-oid" href="#6b">6b</a>흰 배경 헤드라인 + 아래 사진 — 글이 먼저 읽힘</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#191f28">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px">
+    <div style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#191f28;color:#fff;font-size:13px;font-weight:700;text-decoration:none;border-radius:8px">입학 신청</a>
+  </div>
+  <div style="padding:28px 24px 0;display:flex;flex-direction:column;gap:18px">
+    <span style="font-size:13px;font-weight:600;color:#4e5968">다시학교 0기 학생 모집</span>
+    <h1 style="margin:0;font-weight:800;font-size:36px;line-height:1.25;letter-spacing:-.04em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:#4e5968">같은 반이었고, 자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+  </div>
+  <div style="padding:28px 16px 0"><div style="height:300px"><image-slot id="hero-6b" shape="rounded" radius="16" placeholder="반 친구들 사진 (가로)"></image-slot></div></div>
+  <div style="padding:24px 24px 32px;display:flex;flex-direction:column;gap:20px">
+    <p style="margin:0;font-size:15px;line-height:1.7;color:#333d4b">처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <span style="padding:7px 12px;background:#f2f4f6;border-radius:8px;font-size:13px;font-weight:600;color:#333d4b">서울</span>
+      <span style="padding:7px 12px;background:#f2f4f6;border-radius:8px;font-size:13px;font-weight:600;color:#333d4b">12~16명</span>
+      <span style="padding:7px 12px;background:#f2f4f6;border-radius:8px;font-size:13px;font-weight:600;color:#333d4b">4주</span>
+      <span style="padding:7px 12px;background:#f2f4f6;border-radius:8px;font-size:13px;font-weight:600;color:#333d4b">참가비 무료</span>
+    </div>
+    <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:56px;background:#191f28;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px">0기 입학 신청하기</a>
+    <a href="#about" style="display:flex;align-items:center;justify-content:center;height:40px;color:#4e5968;font-size:14.5px;font-weight:500;text-decoration:none">어떤 곳인지 먼저 볼게요 ↓</a>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="6c"><div class="dv-olabel"><a class="dv-oid" href="#6c">6c</a>사진 두 장 콜라주 + 포인트색 버튼 — 조금 더 생기</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#191f28">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px">
+    <div style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#f2f4f6;color:#191f28;font-size:13px;font-weight:700;text-decoration:none;border-radius:8px">입학 신청</a>
+  </div>
+  <div style="padding:24px 24px 0;display:flex;flex-direction:column;gap:16px">
+    <span style="display:inline-flex;align-self:flex-start;padding:6px 10px;background:#fff1ec;color:#e8532f;border-radius:6px;font-size:12.5px;font-weight:700">0기 모집 중</span>
+    <h1 style="margin:0;font-weight:800;font-size:36px;line-height:1.25;letter-spacing:-.04em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.7;color:#4e5968">어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-rows:170px 130px;gap:8px;padding:24px 16px 0">
+    <div style="grid-row:1/3;min-width:0;height:308px;overflow:hidden;border-radius:14px"><image-slot id="hero-6c-1" shape="rounded" radius="14" placeholder="반 전체 사진 (세로)"></image-slot></div>
+    <div style="min-width:0;height:170px;overflow:hidden;border-radius:14px"><image-slot id="hero-6c-2" shape="rounded" radius="14" placeholder="소그룹 사진"></image-slot></div>
+    <div style="min-width:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 4px 0 10px">
+      <span style="font-size:12px;color:#8b95a1">다시학교 0기</span>
+      <span style="font-weight:700;font-size:15px;line-height:1.4">서울 · 12~16명<br>4주 · 무료</span>
+    </div>
+  </div>
+  <div style="padding:24px 24px 32px;display:flex;flex-direction:column;gap:16px">
+    <p style="margin:0;font-size:15px;line-height:1.7;color:#333d4b">처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:56px;background:#e8532f;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px">0기 입학 신청하기</a>
+    <a href="#about" style="display:flex;align-items:center;justify-content:center;height:40px;color:#4e5968;font-size:14.5px;font-weight:500;text-decoration:none">어떤 곳인지 먼저 볼게요 ↓</a>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">다음: "<a class="dv-oid" href="#6a">6a</a>로 풀페이지" · "<a class="dv-oid" href="#6b">6b</a> 사진 더 크게" · "<a class="dv-oid" href="#6c">6c</a> 포인트색 바꿔줘"</p>
+</section>
+<section class="dv-turn" id="t5">
+<div class="dv-thd"><a class="dv-tid" href="#t5">5</a><span class="dv-tname"><a class="dv-oid" href="#4a">4a</a> + <a class="dv-oid" href="#1b">1b</a> 도장</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="5a"><div class="dv-olabel"><a class="dv-oid" href="#5a">5a</a>원형 "입학신청 OPEN" 도장을 헤드라인 우측 상단에</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1c1917;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:22px;padding-top:6px">
+        <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">다시학교 0기 학생 모집 · 2027 SPRING</span>
+        <h1 style="margin:0;font-weight:800;font-size:36px;line-height:1.25;letter-spacing:-.04em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+      </div>
+      <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border:2.5px solid #c0392b;border-radius:50%;color:#c0392b;font-size:12px;font-weight:800;line-height:1.2;text-align:center;letter-spacing:.04em;transform:rotate(12deg);opacity:.9;margin-top:-4px">입학<br>신청<br>OPEN</span>
+    </div>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(28,25,23,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-weight:800;font-size:19px;letter-spacing:-.02em">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#57534e">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="5b"><div class="dv-olabel"><a class="dv-oid" href="#5b">5b</a>같은 도장, 헤드라인 끝에 찍힌 느낌으로 겹치기</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1c1917;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">다시학교 0기 학생 모집 · 2027 SPRING</span>
+    <div style="position:relative">
+      <h1 style="margin:0;font-weight:800;font-size:36px;line-height:1.25;letter-spacing:-.04em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+      <span style="position:absolute;right:0;bottom:-6px;display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border:2.5px solid #c0392b;border-radius:50%;color:#c0392b;font-size:13px;font-weight:800;line-height:1.2;text-align:center;letter-spacing:.04em;transform:rotate(-10deg);opacity:.85;mix-blend-mode:multiply">입학<br>신청<br>OPEN</span>
+    </div>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(28,25,23,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-weight:800;font-size:19px;letter-spacing:-.02em">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#57534e">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">다음: "<a class="dv-oid" href="#5a">5a</a>로 풀페이지" · "도장 더 크게" · "도장색 남색으로"</p>
+</section>
+<section class="dv-turn" id="t4">
+<div class="dv-thd"><a class="dv-tid" href="#t4">4</a><span class="dv-tname">명조 빼고 — <a class="dv-oid" href="#3a">3a</a> 흰 배경·먹색 기준, 헤드라인 글꼴 세 가지</span></div>
+<p class="dv-note">세 안 모두 산세리프. 본문은 Pretendard 그대로, 헤드라인만 다릅니다.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="4a"><div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>Pretendard 하나로 — 굵기 대비만, 가장 현대적</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1c1917;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-weight:800;font-size:36px;line-height:1.25;letter-spacing:-.04em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(28,25,23,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-weight:800;font-size:19px;letter-spacing:-.02em">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#57534e">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="4b"><div class="dv-olabel"><a class="dv-oid" href="#4b">4b</a>Gowun Dodum 헤드라인 — 둥글고 따뜻한 손글씨 톤</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-family:'Gowun Dodum',sans-serif;font-size:19px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1c1917;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Gowun Dodum',sans-serif;font-weight:400;font-size:36px;line-height:1.32;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(28,25,23,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Gowun Dodum',sans-serif;font-size:21px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#57534e">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="4c"><div class="dv-olabel"><a class="dv-oid" href="#4c">4c</a>Pretendard 세미볼드 + 더 크게 — 힘 빼고 담담하게</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-weight:700;font-size:17px;letter-spacing:-.02em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1.5px solid #1c1917;color:#1c1917;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:40px 24px 32px;display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-weight:600;font-size:40px;line-height:1.22;letter-spacing:-.045em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고, 자주 마주쳤고,<br>같이 시간을 보냈으니까요.</p>
+    <p style="margin:0;font-size:20px;font-weight:600;line-height:1.5;letter-spacing:-.03em">어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px solid #1c1917;padding-top:16px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;letter-spacing:.04em;color:#78716c"><span>다시학교</span><span>친해질 때까지 만납니다.</span></div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#44403c">처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">다음: "<a class="dv-oid" href="#4a">4a</a>로 풀페이지" · "<a class="dv-oid" href="#4c">4c</a>에 도장 빼줘" · "<a class="dv-oid" href="#4b">4b</a> 글꼴로 <a class="dv-oid" href="#1c">1c</a> 레이아웃"</p>
+</section>
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">배경 다시 — 누런 종이 빼고, <a class="dv-oid" href="#2a">2a</a> 먹색 잉크 기준</span></div>
+<p class="dv-note">종이 느낌은 색이 아니라 도장·점선·명조 같은 요소로만 내고, 배경은 깨끗하게 갑니다.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a"><div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>순백 #ffffff — 가장 깨끗함</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1c1917;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(28,25,23,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#57534e">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="3b"><div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>아주 연한 회백 #f7f7f5 — 눈이 편함</div>
+<div class="dv-card" style="width:390px;background:#f7f7f5;color:#1c1917">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(28,25,23,.12)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1c1917;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:#78716c">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#44403c">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(28,25,23,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#57534e">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1c1917;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1c1917;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#78716c"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="3c"><div class="dv-olabel"><a class="dv-oid" href="#3c">3c</a>흰 바탕 + 남색 잉크 — 색을 한 톤 더 쓰고 싶다면</div>
+<div class="dv-card" style="width:390px;background:#ffffff;color:#1f3a5f">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(31,58,95,.15)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1f3a5f;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:#64748b">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:#334155">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(31,58,95,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#475569">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1f3a5f;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1f3a5f;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:#64748b"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">다음: "<a class="dv-oid" href="#3a">3a</a>로 풀페이지" · "<a class="dv-oid" href="#3b">3b</a>에 도장색 다른 걸로" · "배경 흰색에 레이아웃은 <a class="dv-oid" href="#1c">1c</a>"</p>
+</section>
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">색 다시 — <a class="dv-oid" href="#1a">1a</a> 레이아웃에 세 가지 잉크</span></div>
+<p class="dv-note">자두빛 남색은 제 임의 선택이었어요. 종이 위에 실제 잉크와 도장이 올라간 것처럼 보이는 조합으로 다시 잡았습니다.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a"><div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>먹색 잉크 + 붉은 도장 — 가장 중립, 따뜻함</div>
+<div class="dv-card" style="width:390px;background:#f3eee3;color:#2b2622">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(43,38,34,.18)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#2b2622;color:#f3eee3;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #b8382a;color:#b8382a;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:rgba(43,38,34,.65)">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:rgba(43,38,34,.85)">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(43,38,34,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(43,38,34,.8)">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#2b2622;color:#f3eee3;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#2b2622;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:rgba(43,38,34,.65)"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="2b"><div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>짙은 남색 잉크 + 붉은 도장 — 학교 서류 느낌</div>
+<div class="dv-card" style="width:390px;background:#f2ede2;color:#1f3a5f">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(31,58,95,.18)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#1f3a5f;color:#f2ede2;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #c0392b;color:#c0392b;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:rgba(31,58,95,.7)">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:rgba(31,58,95,.85)">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(31,58,95,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(31,58,95,.8)">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#1f3a5f;color:#f2ede2;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#1f3a5f;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:rgba(31,58,95,.7)"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="2c"><div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>진녹색 잉크 + 주황 도장 — 조금 더 장난기</div>
+<div class="dv-card" style="width:390px;background:#f4efe4;color:#2f5d3a">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(47,93,58,.18)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#2f5d3a;color:#f4efe4;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #d4652a;color:#c4551c;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:rgba(47,93,58,.75)">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:rgba(47,93,58,.9)">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(47,93,58,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(47,93,58,.85)">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#2f5d3a;color:#f4efe4;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#2f5d3a;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:rgba(47,93,58,.75)"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">다음: "<a class="dv-oid" href="#2a">2a</a>로 풀페이지" · "<a class="dv-oid" href="#2b">2b</a> 종이 더 하얗게" · "레이아웃은 <a class="dv-oid" href="#1c">1c</a>, 색은 <a class="dv-oid" href="#2a">2a</a>"</p>
+</section>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">히어로 시안 — 종이 안내문 + 도장, 모바일 390px</span></div>
+<p class="dv-note">공통: 종이색 #efe9dc, 잉크색 자두빛 남색 #3d2f6b, 도장 붉은색 #b8382a. 헤드라인은 Noto Serif KR, 본문은 Pretendard. 세 안은 같은 카피를 쓰고 "안내문을 어디에 붙였는가"만 다릅니다.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>안내문 그 자체 — 페이지가 종이</div>
+<div class="dv-card" style="width:390px;background:#efe9dc;color:#3d2f6b">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(61,47,107,.18)">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px;letter-spacing:-.01em">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#3d2f6b;color:#efe9dc;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:36px 24px 32px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;padding:5px 10px;border:1.5px solid #b8382a;color:#b8382a;font-size:11.5px;font-weight:700;letter-spacing:.06em;transform:rotate(-3deg);border-radius:2px">다시학교 0기 학생 모집</span>
+      <span style="font-size:11.5px;letter-spacing:.08em;color:rgba(61,47,107,.7)">0기 · 2027 SPRING</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:600;font-size:36px;line-height:1.3;letter-spacing:-.02em;text-wrap:pretty">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:rgba(61,47,107,.85)">같은 반이었고,<br>자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="border-top:1px dashed rgba(61,47,107,.3);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px">다시학교</div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(61,47,107,.8);text-wrap:pretty">처음 보는 사람들이 한 달 동안 같은 반이 되어<br>친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#3d2f6b;color:#efe9dc;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#3d2f6b;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;justify-content:center;font-size:12.5px;letter-spacing:.02em;color:rgba(61,47,107,.7)"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>게시판에 붙인 안내문 — 잉크 배경 위의 종이</div>
+<div class="dv-card" style="width:390px;background:#3d2f6b;color:#efe9dc">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#efe9dc;color:#3d2f6b;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:26px 18px 36px;display:flex;flex-direction:column;gap:20px">
+    <div style="position:relative;background:#efe9dc;color:#3d2f6b;padding:38px 22px 28px;transform:rotate(-1.2deg);box-shadow:0 10px 30px rgba(0,0,0,.25)">
+      <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(2deg);width:84px;height:22px;background:rgba(255,255,255,.55);border:1px solid rgba(0,0,0,.06)"></div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px">
+        <span style="font-size:11.5px;letter-spacing:.1em;color:rgba(61,47,107,.7)">안내문 · 0기 · 2027 SPRING</span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border:2px solid #b8382a;border-radius:50%;color:#b8382a;font-size:11px;font-weight:800;line-height:1.2;text-align:center;letter-spacing:.04em;transform:rotate(12deg);opacity:.9">입학<br>신청<br>OPEN</span>
+      </div>
+      <h1 style="margin:0 0 18px;font-family:'Noto Serif KR',serif;font-weight:600;font-size:32px;line-height:1.32;letter-spacing:-.02em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+      <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(61,47,107,.85)">같은 반이었고, 자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br><br>어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+      <div style="margin-top:22px;padding-top:14px;border-top:1px solid rgba(61,47,107,.25);display:flex;justify-content:space-between;align-items:baseline">
+        <span style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:15px">다시학교</span>
+        <span style="font-size:12px;color:rgba(61,47,107,.7)">친해질 때까지 만납니다.</span>
+      </div>
+    </div>
+    <p style="margin:6px 4px 0;font-size:15px;line-height:1.7;color:rgba(239,233,220,.85);text-wrap:pretty">처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:54px;background:#efe9dc;color:#3d2f6b;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#efe9dc;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:rgba(239,233,220,.7)"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+<div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>명찰을 단 타이포 — 큰 글자, 소품은 명찰 하나</div>
+<div class="dv-card" style="width:390px;background:#efe9dc;color:#3d2f6b">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px">
+    <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:18px">다시학교</div>
+    <a href="#apply" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;border:1.5px solid #3d2f6b;color:#3d2f6b;font-size:13px;font-weight:600;text-decoration:none;border-radius:4px">입학 신청</a>
+  </div>
+  <div style="padding:20px 22px 34px;display:flex;flex-direction:column;gap:26px">
+    <div style="display:flex;justify-content:flex-end">
+      <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(61,47,107,.25);padding:8px 12px 8px 10px;border-radius:3px;transform:rotate(2deg);box-shadow:0 2px 6px rgba(61,47,107,.12)">
+        <span style="width:8px;height:8px;border-radius:50%;background:#b8382a"></span>
+        <div style="display:flex;flex-direction:column;line-height:1.2"><span style="font-size:10px;letter-spacing:.08em;color:rgba(61,47,107,.65)">0기 · 1반</span><span style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:15px">학생 모집</span></div>
+      </div>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif KR',serif;font-weight:700;font-size:44px;line-height:1.22;letter-spacing:-.03em">학교에서는<br>친구 사귀는 게<br>쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.75;color:rgba(61,47,107,.85)">같은 반이었고, 자주 마주쳤고,<br>같이 시간을 보냈으니까요.</p>
+    <p style="margin:0;font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.55;font-weight:500;text-wrap:pretty">어른이 된 지금,<br>다시 그런 환경을 만들어보려고 해요.</p>
+    <div style="display:flex;flex-direction:column;gap:6px;padding:16px 0;border-top:1px solid #3d2f6b;border-bottom:1px solid #3d2f6b">
+      <div style="display:flex;justify-content:space-between;font-size:12px;letter-spacing:.06em;color:rgba(61,47,107,.7)"><span>다시학교</span><span>0기 · 2027 SPRING</span></div>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;text-wrap:pretty">처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;gap:10px;height:54px;background:#b8382a;color:#efe9dc;font-size:16px;font-weight:700;text-decoration:none;border-radius:4px">0기 입학 신청하기</a>
+      <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#3d2f6b;font-size:14.5px;text-decoration:underline;text-underline-offset:4px">어떤 곳인지 먼저 볼게요 ↓</a>
+    </div>
+    <div style="display:flex;gap:8px;justify-content:center;font-size:12.5px;color:rgba(61,47,107,.7)"><span>서울</span><span>·</span><span>12~16명</span><span>·</span><span>4주</span><span>·</span><span>참가비 무료</span></div>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">다음: "<a class="dv-oid" href="#1a">1a</a>로 풀페이지 가자" · "<a class="dv-oid" href="#1c">1c</a> 타이포에 <a class="dv-oid" href="#1b">1b</a> 도장 넣어줘" · "포인트색 붉은색 말고 다른 걸로"</p>
+</section>
+</x-dc>
+</body>
+</html>

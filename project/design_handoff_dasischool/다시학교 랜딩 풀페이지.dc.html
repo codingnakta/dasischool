@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><title>다시학교 | 어른들의 새로운 같은 반</title><meta name="description" content="처음 보는 사람들이 한 달 동안 같은 반이 되어 반복해서 만나는 성인 소셜클럽. 다시학교 0기 학생을 모집합니다."><meta property="og:title" content="학교에서는 친구 사귀는 게 쉬웠는데."><meta property="og:description" content="어른이 된 지금, 한 달 동안 다시 같은 반이 되어봅니다. 다시학교 0기."><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><script src="./image-slot.js"></script><style>body{margin:0;background:#fff;color:#191f28;font-family:Pretendard,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:#191f28}a:hover{color:#4e5968}*{box-sizing:border-box}</style></helmet>
+<div style="max-width:640px;margin:0 auto;background:#fff;position:relative">
+
+<header style="position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(25,31,40,.06)">
+  <a href="#top" style="font-weight:800;font-size:17px;letter-spacing:-.02em;text-decoration:none">다시학교</a>
+  <nav style="display:flex;align-items:center;gap:18px">
+    <a href="#about" style="font-size:14px;font-weight:500;color:#4e5968;text-decoration:none">소개</a>
+    <a href="#cohort" style="font-size:14px;font-weight:500;color:#4e5968;text-decoration:none">0기</a>
+    <a href="#faq" style="font-size:14px;font-weight:500;color:#4e5968;text-decoration:none">FAQ</a>
+    <a href="{{ applyUrl }}" onClick="{{ trackHeader }}" style="display:inline-flex;align-items:center;height:36px;padding:0 14px;background:#191f28;color:#fff;font-size:13px;font-weight:700;text-decoration:none;border-radius:8px">입학 신청</a>
+  </nav>
+</header>
+
+<section id="top" data-screen-label="Hero" ref="{{ heroRef }}" style="position:relative;height:min(84vh,720px);min-height:560px;background:#1f2430;margin-top:-61px">
+  <div style="position:absolute;inset:0"><image-slot id="hero" shape="rect" placeholder="한 반이 함께 있는 사진 (가로)"></image-slot></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 32%,rgba(0,0,0,0) 48%,rgba(0,0,0,.74) 100%);pointer-events:none"></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:0 24px 28px;color:#fff;display:flex;flex-direction:column;gap:16px;pointer-events:none">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.02em;opacity:.85">다시학교 0기 학생 모집</span>
+    <h1 style="margin:0;font-weight:800;font-size:clamp(32px,9vw,42px);line-height:1.25;letter-spacing:-.04em;text-wrap:pretty">학교에서는<br>친구 사귀는 게 쉬웠는데.</h1>
+    <p style="margin:0;font-size:16px;line-height:1.65;opacity:.92;text-wrap:pretty">같은 반이었고, 자주 마주쳤고,<br>같이 시간을 보냈으니까요.<br>어른이 된 지금, 다시 그런 환경을 만들어보려고 해요.</p>
+  </div>
+</section>
+
+<section style="padding:24px 24px 40px;display:flex;flex-direction:column;gap:24px">
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;text-align:center">
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;color:#8b95a1">지역</span><span style="font-weight:700;font-size:15px">서울</span></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;color:#8b95a1">인원</span><span style="font-weight:700;font-size:15px">12~16명</span></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;color:#8b95a1">기간</span><span style="font-weight:700;font-size:15px">4주</span></div>
+    <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;color:#8b95a1">참가비</span><span style="font-weight:700;font-size:15px">무료</span></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <a href="{{ applyUrl }}" onClick="{{ trackHero }}" style="display:flex;align-items:center;justify-content:center;height:56px;background:#191f28;color:#fff;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px">0기 입학 신청하기</a>
+    <a href="#about" style="display:flex;align-items:center;justify-content:center;height:44px;color:#4e5968;font-size:14.5px;font-weight:500;text-decoration:none">어떤 곳인지 먼저 볼게요 ↓</a>
+  </div>
+  <div style="padding-top:8px;border-top:1px solid #f2f4f6;display:flex;flex-direction:column;gap:8px">
+    <span style="font-weight:800;font-size:18px;letter-spacing:-.02em">다시학교</span>
+    <p style="margin:0;font-size:15.5px;line-height:1.7;color:#4e5968;text-wrap:pretty">처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
+  </div>
+</section>
+
+<section id="about" data-screen-label="Problem" style="padding:56px 24px;background:#f9fafb;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em;text-wrap:pretty">친구를 만드는 방법이 어려워진 게 아니라<br>친구가 생길 환경이 사라진 건 아닐까요?</h2>
+  <p style="margin:0;font-size:16px;line-height:1.75;color:#4e5968;text-wrap:pretty">학교에서는 친구를 만들기 위해 사람을 찾아다니지 않았어요. 같은 반에 배정되고, 매일 얼굴을 보고, 같이 밥을 먹고, 같은 일을 하다 보니 어느 순간 친구가 되어 있었죠.<br><br>하지만 성인이 되면 새로운 사람을 반복해서 만나는 환경이 거의 사라져요.</p>
+  <div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-top:4px">
+    <span style="font-weight:700;font-size:17px">같은 반</span>
+    <span style="color:#b0b8c1;font-size:14px;padding-left:4px">↓</span>
+    <span style="font-weight:700;font-size:17px">자주 만남</span>
+    <span style="color:#b0b8c1;font-size:14px;padding-left:4px">↓</span>
+    <span style="font-weight:700;font-size:17px">같이 시간을 보냄</span>
+    <span style="color:#b0b8c1;font-size:14px;padding-left:4px">↓</span>
+    <span style="font-weight:800;font-size:22px;letter-spacing:-.03em">친구</span>
+  </div>
+</section>
+
+<section data-screen-label="Solution" style="padding:56px 24px;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">그래서 다시,<br>같은 반을 만들었어요.</h2>
+  <p style="margin:0;font-size:16px;line-height:1.75;color:#4e5968;text-wrap:pretty">다시학교는 사람을 한 번에 많이 만나게 하지 않아요. 대신 같은 사람을 여러 번 만나게 해요.<br><br>12~16명이 한 반이 되어 한 달 동안 함께 활동해요.</p>
+  <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+    <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid #f2f4f6"><span style="font-size:13px;font-weight:700;color:#8b95a1;padding-top:3px">01</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;font-size:17px">같은 사람</span><span style="font-size:15px;line-height:1.6;color:#4e5968">매번 새로운 사람을 만나지 않아요.</span></div></li>
+    <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid #f2f4f6"><span style="font-size:13px;font-weight:700;color:#8b95a1;padding-top:3px">02</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;font-size:17px">반복되는 만남</span><span style="font-size:15px;line-height:1.6;color:#4e5968">한 번 만나고 끝나지 않아요.</span></div></li>
+    <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid #f2f4f6"><span style="font-size:13px;font-weight:700;color:#8b95a1;padding-top:3px">03</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;font-size:17px">작은 그룹</span><span style="font-size:15px;line-height:1.6;color:#4e5968">대규모 네트워킹보다 서로 이름을 기억할 수 있는 규모.</span></div></li>
+    <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 0;border-top:1px solid #f2f4f6;border-bottom:1px solid #f2f4f6"><span style="font-size:13px;font-weight:700;color:#8b95a1;padding-top:3px">04</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;font-size:17px">자연스러운 관계</span><span style="font-size:15px;line-height:1.6;color:#4e5968">누군가와 꼭 친해져야 한다는 압박을 만들지 않아요.</span></div></li>
+  </ul>
+</section>
+
+<section data-screen-label="Comparison" style="padding:56px 24px;background:#f9fafb;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">한 번 만나는 모임과는<br>조금 달라요.</h2>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px">
+    <div style="display:flex;flex-direction:column;gap:14px;padding:22px 18px;border-radius:14px;background:#fff;color:#8b95a1">
+      <span style="font-size:12.5px;font-weight:700;letter-spacing:.02em">일반 친목모임</span>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600;line-height:1.3"><span>오늘 처음 만남</span><span style="font-size:12px;opacity:.6">↓</span><span>술 / 활동</span><span style="font-size:12px;opacity:.6">↓</span><span>인스타 교환</span><span style="font-size:12px;opacity:.6">↓</span><span>언젠가 보자</span><span style="font-size:12px;opacity:.6">↓</span><span style="color:#b0b8c1">끝</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;padding:22px 18px;border-radius:14px;background:#191f28;color:#fff">
+      <span style="font-size:12.5px;font-weight:700;letter-spacing:.02em;opacity:.8">다시학교</span>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600;line-height:1.3"><span>같은 반 배정</span><span style="font-size:12px;opacity:.5">↓</span><span>첫 만남</span><span style="font-size:12px;opacity:.5">↓</span><span>다시 만남</span><span style="font-size:12px;opacity:.5">↓</span><span>소그룹 만남</span><span style="font-size:12px;opacity:.5">↓</span><span>또 만남</span><span style="font-size:12px;opacity:.5">↓</span><span style="font-size:20px;font-weight:800;letter-spacing:-.03em">친구</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cohort" data-screen-label="Cohort" style="padding:56px 24px;display:flex;flex-direction:column;gap:28px">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <span style="font-size:13px;font-weight:700;color:#8b95a1;letter-spacing:.02em">0기 · BETA</span>
+    <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">다시학교 0기</h2>
+  </div>
+  <p style="margin:0;font-size:16px;line-height:1.75;color:#4e5968;text-wrap:pretty">정식 운영 전에 진행하는 첫 번째 한 달짜리 베타 기수예요.<br>처음 만나는 12~16명이 4주 동안 하나의 반으로 생활해요.</p>
+  <dl style="margin:0;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">인원</dt><dd style="margin:0;font-size:15.5px;font-weight:600">12~16명</dd></div>
+    <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">기간</dt><dd style="margin:0;font-size:15.5px;font-weight:600">4주</dd></div>
+    <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">지역</dt><dd style="margin:0;font-size:15.5px;font-weight:600">서울</dd></div>
+    <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">참가비</dt><dd style="margin:0;font-size:15.5px;font-weight:600">무료</dd></div>
+    <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">참여 조건</dt><dd style="margin:0;font-size:15.5px;font-weight:600">4주 중 최소 3회 이상 참여 가능</dd></div>
+    <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid #f2f4f6;border-bottom:1px solid #f2f4f6"><dt style="font-size:14px;color:#8b95a1">이름</dt><dd style="margin:0;font-size:15.5px;font-weight:600">실명 대신 짧은 닉네임 사용</dd></div>
+  </dl>
+  <p style="margin:0;font-size:13.5px;line-height:1.6;color:#8b95a1">식사, 카페, 액티비티 등 개인 이용 비용은 각자 부담해요.</p>
+</section>
+
+<section data-screen-label="Program" style="padding:56px 24px;background:#f9fafb;display:flex;flex-direction:column;gap:32px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">한 달은 이렇게 흘러가요.</h2>
+  <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+    <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:16px"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#191f28;margin-top:6px"></span><span style="flex:1;width:2px;background:#e5e8eb;margin-top:6px"></span></div><div style="display:flex;flex-direction:column;gap:6px;padding-bottom:32px"><span style="font-size:12.5px;font-weight:700;color:#8b95a1;letter-spacing:.04em">WEEK 01</span><span style="font-weight:800;font-size:20px;letter-spacing:-.02em">입학식</span><p style="margin:0;font-size:15.5px;line-height:1.7;color:#4e5968">같은 반 친구들을 처음 만나요.<br>모든 사람과 한 번씩 이야기하는 것이 첫 번째 목표.</p></div></li>
+    <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:16px"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#191f28;margin-top:6px"></span><span style="flex:1;width:2px;background:#e5e8eb;margin-top:6px"></span></div><div style="display:flex;flex-direction:column;gap:6px;padding-bottom:32px"><span style="font-size:12.5px;font-weight:700;color:#8b95a1;letter-spacing:.04em">WEEK 02</span><span style="font-weight:800;font-size:20px;letter-spacing:-.02em">짝꿍주간</span><p style="margin:0;font-size:15.5px;line-height:1.7;color:#4e5968">3~4명의 소그룹으로 나뉘어요.<br>카페든, 저녁이든, 산책이든. 이번에는 조금 더 천천히 이야기해요.</p></div></li>
+    <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:16px"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#191f28;margin-top:6px"></span><span style="flex:1;width:2px;background:#e5e8eb;margin-top:6px"></span></div><div style="display:flex;flex-direction:column;gap:6px;padding-bottom:32px"><span style="font-size:12.5px;font-weight:700;color:#8b95a1;letter-spacing:.04em">WEEK 03</span><span style="font-weight:800;font-size:20px;letter-spacing:-.02em">우리반 활동</span><p style="margin:0;font-size:15.5px;line-height:1.7;color:#4e5968">반 전체가 함께 하나의 활동을 해요.<br>볼링, 보드게임, 피크닉 등 활동은 기수마다 달라질 수 있어요.</p></div></li>
+    <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:16px"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#191f28;margin-top:6px"></span></div><div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12.5px;font-weight:700;color:#8b95a1;letter-spacing:.04em">WEEK 04</span><span style="font-weight:800;font-size:20px;letter-spacing:-.02em">졸업식</span><p style="margin:0;font-size:15.5px;line-height:1.7;color:#4e5968">4주 동안의 추억을 정리해요.<br>담임이 운영하는 공식 4주 프로그램은 여기서 끝나요.</p></div></li>
+  </ol>
+  <div style="padding:28px 24px;border-radius:16px;background:#191f28;color:#fff;display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:12.5px;font-weight:700;letter-spacing:.04em;opacity:.7">졸업 후</span>
+    <p style="margin:0;font-size:16px;line-height:1.7;text-wrap:pretty">담임은 더 이상 주간 모임을 만들지 않아요.<br>반 단체채팅방은 그대로 남고, 졸업생은 전체 동창 커뮤니티에 합류해요.</p>
+    <p style="margin:0;font-size:16px;line-height:1.7;opacity:.85;text-wrap:pretty">그래도 누군가 먼저<br><strong style="font-weight:800;font-size:19px;letter-spacing:-.02em;opacity:1">“이번 주는 우리 안 봐?”</strong><br>라고 말하게 되는지 보고 싶어요.</p>
+    <p style="margin:0;font-size:14.5px;line-height:1.6;opacity:.7">그게 0기에서 우리가 가장 궁금한 것이에요.</p>
+  </div>
+  <a href="{{ applyUrl }}" onClick="{{ trackProgram }}" style="display:flex;align-items:center;justify-content:center;height:56px;background:#fff;border:1.5px solid #191f28;color:#191f28;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px">0기 입학 신청하기</a>
+</section>
+
+<section data-screen-label="Who" style="padding:56px 24px;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">이런 학생을<br>기다리고 있어요.</h2>
+  <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.6">
+    <li style="display:flex;gap:12px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#191f28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px">✓</span><span>새로운 친구가 있었으면 하는 사람</span></li>
+    <li style="display:flex;gap:12px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#191f28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px">✓</span><span>회사와 집 외의 새로운 관계가 필요한 사람</span></li>
+    <li style="display:flex;gap:12px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#191f28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px">✓</span><span>한 번보다 여러 번 만나보고 싶은 사람</span></li>
+    <li style="display:flex;gap:12px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#191f28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px">✓</span><span>혼자 모임에 참여하는 것이 조금 어색했던 사람</span></li>
+    <li style="display:flex;gap:12px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#191f28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px">✓</span><span>소개팅이 아닌 자연스러운 관계를 원하는 사람</span></li>
+    <li style="display:flex;gap:12px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:#191f28;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px">✓</span><span>4주 동안 실제로 참여할 수 있는 사람</span></li>
+  </ul>
+  <div style="padding-top:24px;border-top:1px solid #f2f4f6;display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:14px;font-weight:700;color:#8b95a1">이런 경우에는 맞지 않을 수 있어요</span>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;color:#4e5968">
+      <li style="display:flex;gap:10px"><span style="color:#b0b8c1">—</span><span>연애 상대를 찾는 것이 주목적인 경우</span></li>
+      <li style="display:flex;gap:10px"><span style="color:#b0b8c1">—</span><span>영업, 투자, 종교 등의 목적으로 참여하는 경우</span></li>
+      <li style="display:flex;gap:10px"><span style="color:#b0b8c1">—</span><span>대부분의 일정에 참여하기 어려운 경우</span></li>
+      <li style="display:flex;gap:10px"><span style="color:#b0b8c1">—</span><span>상대방의 경계를 존중하기 어려운 경우</span></li>
+    </ul>
+  </div>
+</section>
+
+<section data-screen-label="Nickname" style="padding:56px 24px;background:#f9fafb;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">다시학교에서는<br>새로운 이름으로 만나요.</h2>
+  <p style="margin:0;font-size:16px;line-height:1.75;color:#4e5968;text-wrap:pretty">처음부터 실명, 직장, 학교 같은 정보로 사람을 판단하지 않았으면 해요.<br>그래서 다시학교에서는 짧은 닉네임을 사용해요.</p>
+  <sc-if value="{{ showNicknameCard }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:16px;background:#fff;border:1px solid #e5e8eb">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:12px;font-weight:700;color:#8b95a1;letter-spacing:.04em">다시학교 학생증</span>
+      <span style="font-size:12px;font-weight:700;color:#8b95a1">0기 · 1반</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="flex:none;width:64px;height:64px"><image-slot id="student-photo" shape="circle" placeholder="사진"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:800;font-size:24px;letter-spacing:-.03em">모아</span><span style="font-size:14px;color:#4e5968">영화 · 카페 · 여행</span></div>
+    </div>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#333d4b;padding-top:14px;border-top:1px solid #f2f4f6">“갑자기 저녁 먹자고 해도 나올 친구가 있었으면 좋겠어요.”</p>
+  </div>
+  </sc-if>
+  <p style="margin:0;font-size:13.5px;line-height:1.6;color:#8b95a1">2~3글자 닉네임 권장. 한 반에서는 동일 닉네임을 사용할 수 없어요.</p>
+</section>
+
+<section data-screen-label="Alumni" style="padding:56px 24px;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em;text-wrap:pretty">한 달은 같은 반으로,<br>졸업 후에는 동창으로 남아요.</h2>
+  <p style="margin:0;font-size:16px;line-height:1.75;color:#4e5968;text-wrap:pretty">한 달 동안 반 구성은 유지돼요. 조금 어색했던 사람을 다음 주에 다시 만나고, 지난주에 잠깐 이야기한 사람과 이번에는 더 오래 이야기해요.<br><br>관계가 쌓일 시간을 만드는 것. 그것이 다시학교의 가장 중요한 시스템이에요.<br><br>4주차 졸업 후에는 기수별 반 관계를 유지하면서 전체 동창 커뮤니티에 합류하고, 동아리와 번개는 졸업생이 자율적으로 만들어요.</p>
+</section>
+
+<section data-screen-label="Rules" style="padding:56px 24px;background:#f9fafb;display:flex;flex-direction:column;gap:24px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">편하게 친해지기 위해<br>지켜야 할 것들</h2>
+  <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;font-size:15.5px;line-height:1.6">
+    <li style="padding:13px 0;border-top:1px solid #e5e8eb">술은 선택이에요.</li>
+    <li style="padding:13px 0;border-top:1px solid #e5e8eb">연애는 자유지만 소개팅 모임은 아니에요.</li>
+    <li style="padding:13px 0;border-top:1px solid #e5e8eb">원하지 않는 연락을 반복하지 않아요.</li>
+    <li style="padding:13px 0;border-top:1px solid #e5e8eb">영업 / 투자 / 종교 권유는 하지 않아요.</li>
+    <li style="padding:13px 0;border-top:1px solid #e5e8eb">사진이나 개인정보를 허락 없이 공유하지 않아요.</li>
+    <li style="padding:13px 0;border-top:1px solid #e5e8eb;border-bottom:1px solid #e5e8eb">불편한 일이 있다면 운영진에게 이야기할 수 있어요.</li>
+  </ul>
+  <a href="/rules" style="font-size:14.5px;font-weight:600;color:#191f28;text-decoration:none">다시학교 교칙 자세히 보기 →</a>
+</section>
+
+<section id="faq" data-screen-label="FAQ" style="padding:56px 24px;display:flex;flex-direction:column;gap:24px">
+  <h2 style="margin:0;font-weight:800;font-size:26px;line-height:1.35;letter-spacing:-.035em">자주 묻는 질문</h2>
+  <div style="display:flex;flex-direction:column;border-top:1px solid #f2f4f6">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="9">
+      <div style="border-bottom:1px solid #f2f4f6">
+        <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;background:none;border:0;cursor:pointer;text-align:left;font-family:inherit;color:#191f28;font-size:16px;font-weight:600;line-height:1.5">
+          <span>{{ f.q }}</span>
+          <span style="flex:none;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;color:#8b95a1;font-size:20px;font-weight:300">{{ f.icon }}</span>
+        </button>
+        <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;padding:0 36px 18px 0;font-size:15px;line-height:1.7;color:#4e5968">{{ f.a }}</p>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Final CTA" ref="{{ finalRef }}" style="position:relative;min-height:620px;background:#1f2430;display:flex;align-items:flex-end">
+  <div style="position:absolute;inset:0"><image-slot id="final" shape="rect" placeholder="졸업식 또는 반 활동 사진"></image-slot></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(0,0,0,.78) 100%);pointer-events:none"></div>
+  <div style="position:relative;width:100%;padding:0 24px 40px;color:#fff;display:flex;flex-direction:column;gap:20px;pointer-events:none">
+    <h2 style="margin:0;font-weight:800;font-size:clamp(28px,8vw,38px);line-height:1.28;letter-spacing:-.04em">다시 친구를 만드는<br>가장 익숙한 방법.</h2>
+    <p style="margin:0;font-size:17px;line-height:1.6">우리, 다시 같은 반이 되어볼까요?</p>
+    <div style="display:flex;flex-direction:column;gap:4px;padding-top:4px"><span style="font-size:13px;font-weight:700;opacity:.8">다시학교 0기</span><span style="font-size:15px;font-weight:600">12~16명 · 서울 · 4주 · 무료</span></div>
+    <a href="{{ applyUrl }}" onClick="{{ trackBottom }}" style="pointer-events:auto;display:flex;align-items:center;justify-content:center;height:56px;background:#fff;color:#191f28;font-size:16px;font-weight:700;text-decoration:none;border-radius:12px;margin-top:8px">0기 입학 신청하기</a>
+    <p style="margin:0;font-size:13px;line-height:1.6;opacity:.75">선착순 모집이 아니에요.<br>지원 내용과 참여 가능한 일정을 고려해 반을 구성해요.</p>
+  </div>
+</section>
+
+<footer style="padding:40px 24px 120px;display:flex;flex-direction:column;gap:28px">
+  <div style="display:flex;flex-direction:column;gap:6px"><span style="font-weight:800;font-size:17px;letter-spacing:-.02em">다시학교</span><span style="font-size:14px;color:#4e5968">친해질 때까지 만납니다.</span></div>
+  <nav style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px">
+    <a href="https://instagram.com/dasihakkyo" style="color:#4e5968;text-decoration:none">Instagram</a>
+    <a href="/privacy" style="color:#4e5968;text-decoration:none">개인정보 안내</a>
+    <a href="/rules" style="color:#4e5968;text-decoration:none">다시학교 교칙</a>
+    <a href="mailto:dasischool.nakta@gmail.com" style="color:#4e5968;text-decoration:none">문의하기</a>
+  </nav>
+  <div style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:#8b95a1"><span>dasischool.nakta@gmail.com</span><span>© 2026 다시학교</span></div>
+</footer>
+
+<sc-if value="{{ showSticky }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(255,255,255,.98),rgba(255,255,255,.9));pointer-events:none">
+    <a href="{{ applyUrl }}" onClick="{{ trackSticky }}" style="pointer-events:auto;width:100%;max-width:592px;display:flex;align-items:center;justify-content:center;height:52px;background:#191f28;color:#fff;font-size:15.5px;font-weight:700;text-decoration:none;border-radius:12px;box-shadow:0 6px 20px rgba(25,31,40,.18)">0기 입학 신청</a>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;동작&quot;},&quot;showNicknameCard&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;내용&quot;},&quot;applyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;다시학교 입학 신청.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;동작&quot;}}">
+class Component extends DCLogic {
+  state = { open: -1, heroVisible: true, finalVisible: false };
+  heroRef = React.createRef();
+  finalRef = React.createRef();
+  faqData = [
+    ['정말 무료인가요?', '0기는 정식 운영 전 한 달짜리 베타 기수로 참가비 없이 운영해요. 단, 식사나 카페 등 개인적으로 발생하는 비용은 각자 부담해요.'],
+    ['혼자 신청해도 되나요?', '다시학교는 기본적으로 모두 혼자 신청하는 것을 전제로 운영해요.'],
+    ['낯을 많이 가려도 괜찮나요?', '괜찮아요. 처음부터 활발하게 행동할 필요는 없어요. 운영자가 소그룹과 자리 등을 조정해 자연스럽게 이야기할 기회를 만들어요.'],
+    ['술모임인가요?', '아니에요. 술은 선택이며 음주를 전제로 프로그램을 운영하지 않아요.'],
+    ['소개팅 모임인가요?', '아니에요. 연애가 생기는 것을 제한하지는 않지만, 특정 성별과의 만남이나 연애를 목적으로 운영하지 않아요.'],
+    ['왜 매주 같은 사람을 만나나요?', '다시학교가 가장 중요하게 생각하는 것이 반복되는 만남이기 때문이에요.'],
+    ['한 달이 끝나면 어떻게 되나요?', '4주차 졸업식과 함께 담임의 정규 프로그램은 종료돼요. 반 단체채팅방은 유지되며, 졸업생은 전체 동창 커뮤니티와 자율 동아리에 참여할 수 있어요.'],
+    ['꼭 4번 모두 참여해야 하나요?', '가급적 모든 일정 참석을 권장하며, 최소 3회 이상 참여 가능한 사람을 우선적으로 모집해요.'],
+    ['친구와 함께 신청해도 되나요?', '신청은 가능하지만 같은 반 배정은 보장하지 않아요.'],
+  ];
+  componentDidMount() {
+    this.onScroll = () => {
+      const vh = window.innerHeight;
+      const vis = el => { if (!el) return false; const r = el.getBoundingClientRect(); return r.bottom > vh * 0.15 && r.top < vh * 0.85; };
+      const hero = document.getElementById('top');
+      const fin = document.querySelector('[data-screen-label="Final CTA"]');
+      if (!hero) return;
+      const heroVisible = vis(hero), finalVisible = vis(fin);
+      if (heroVisible !== this.state.heroVisible || finalVisible !== this.state.finalVisible) this.setState({ heroVisible, finalVisible });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+    this.t1 = setTimeout(this.onScroll, 300);
+    this.t2 = setTimeout(this.onScroll, 1200);
+  }
+  componentWillUnmount() { clearTimeout(this.t1); clearTimeout(this.t2); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onScroll); }
+  track(name) { return () => { try { window.gtag && window.gtag('event', name); } catch (_) {} console.log('[event]', name); }; }
+  renderVals() {
+    const sticky = this.props.stickyCta ?? true;
+    return {
+      applyUrl: this.props.applyUrl ?? '다시학교 입학 신청.dc.html',
+      showNicknameCard: this.props.showNicknameCard ?? true,
+      heroRef: this.heroRef, finalRef: this.finalRef,
+      showSticky: sticky && !this.state.heroVisible && !this.state.finalVisible,
+      trackHeader: this.track('header_apply_click'), trackHero: this.track('hero_apply_click'),
+      trackProgram: this.track('program_apply_click'), trackBottom: this.track('bottom_apply_click'),
+      trackSticky: this.track('sticky_apply_click'),
+      faqs: this.faqData.map(([q, a], i) => ({
+        q, a, open: this.state.open === i, icon: this.state.open === i ? '−' : '+',
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>
