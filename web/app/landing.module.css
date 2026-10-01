@@ -86,10 +86,12 @@
 }
 
 /* 히어로 */
+/* 첫 화면에 "0기 입학 신청하기" 버튼까지 보이도록:
+   화면 높이 − (히어로 하단 정보 패딩 24 + 4열 정보 ~40 + gap 24 + 버튼 56 + 아래 여백 ~32) ≈ 100vh − 208px */
 .hero {
   position: relative;
-  height: min(84vh, 720px);
-  min-height: 560px;
+  height: clamp(380px, calc(100vh - 208px), 560px);
+  height: clamp(380px, calc(100svh - 208px), 560px);
   background: #1f2430;
   margin-top: -61px;
 }
