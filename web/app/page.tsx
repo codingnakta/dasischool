@@ -250,7 +250,7 @@ export default function Home() {
             <span>다시학교 0기</span>
             <span>12~16명 · 서울 · 4주 · 0기 무료</span>
           </div>
-          <ApplyLink event="bottom_apply_click" className={`${s.btn} ${s.btnWhite}`}>0기 입학 신청하기</ApplyLink>
+          <ApplyLink event="bottom_apply_click" className={`${s.btn} ${s.btnWhite}`}>0기 무료로 입학하기</ApplyLink>
           <p className={s.finalNote}>선착순 모집이 아니에요.<br />지원 내용과 참여 가능한 일정을 고려해 반을 구성해요.</p>
         </div>
       </section>
