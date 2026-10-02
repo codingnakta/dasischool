@@ -14,7 +14,8 @@ npm run build
 - `app/api/apply/route.ts` — 제출 엔드포인트. 서버 재검증 후 구글 시트(Apps Script)로 전송. 환경변수 없으면 로그만.
 - `app/page.tsx` + `app/landing.module.css` + `app/components/` — 랜딩. 헤더(히어로 위 투명 → 스크롤 후 흰 배경), FAQ 아코디언, 하단 고정 CTA(히어로·마지막 CTA 구간에서 숨김), 신청 버튼 클릭 이벤트(gtag).
 - 사진: 히어로 `public/hero.webp` (1280px), 문제 제기 섹션 `public/about.webp` (1080px, 풀블리드 + 흰 글씨). 마지막 CTA `public/final.webp` (1080px). 학생증 예시 사진은 `public/student.webp` (320px 정사각 크롭).
-- 미제작 페이지: `/rules`, `/privacy` (링크만 있음).
+- `app/rules/page.tsx` + `app/doc.module.css` — 교칙 페이지. 교칙 제목은 `lib/apply.ts` 의 RULES 와 같은 순서로 유지.
+- 미제작 페이지: `/privacy` (링크만 있음).
 
 ## 신청 데이터 저장 (구글 시트)
 
