@@ -77,14 +77,7 @@ export default function Home() {
           <div><dt>기간</dt><dd>4주</dd></div>
           <div><dt>참가비</dt><dd>무료<span className={s.statSub}>0기 한정</span></dd></div>
         </dl>
-        <div className={s.stack} style={{ gap: 8 }}>
-          <ApplyLink event="hero_apply_click" className={`${s.btn} ${s.btnDark}`}>0기 입학 신청하기</ApplyLink>
-          <a href="#about" className={s.textLink}>어떤 곳인지 먼저 볼게요 ↓</a>
-        </div>
-        <div className={s.intro}>
-          <span className={s.introName}>다시학교</span>
-          <p className={s.introP}>처음 보는 사람들이 한 달 동안 같은 반이 되어 친해질 때까지 반복해서 만나는 부담 없는 성인 친목학교.</p>
-        </div>
+        <ApplyLink event="hero_apply_click" className={`${s.btn} ${s.btnDark}`}>0기 입학 신청하기</ApplyLink>
       </section>
 
       <section id="about" className={s.aboutHero}>
