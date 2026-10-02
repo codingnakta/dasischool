@@ -836,6 +836,10 @@
   align-items: flex-end;
 }
 
+.final .photo img {
+  object-position: center 35%; /* 테이블에 둘러앉은 얼굴들이 위쪽에 남도록 */
+}
+
 .finalShade {
   position: absolute;
   inset: 0;
