@@ -115,26 +115,26 @@ export default function Home() {
       <section className={`${s.section} ${s.alt}`}>
         <h2 className={s.h2}>한 번 만나는 모임과는<br />조금 달라요.</h2>
         <div className={s.compare}>
-          <div className={`${s.card} ${s.cardLight}`}>
-            <span className={s.cardTitle}>일반 친목모임</span>
-            <div className={s.cardFlow}>
-              <span>오늘 처음 만남</span><span className={s.cardArrow}>↓</span>
-              <span>술 / 활동</span><span className={s.cardArrow}>↓</span>
-              <span>인스타 교환</span><span className={s.cardArrow}>↓</span>
-              <span>언젠가 보자</span><span className={s.cardArrow}>↓</span>
-              <span className={s.cardEndLight}>끝</span>
-            </div>
+          <div className={s.track}>
+            <span className={s.trackTitle}>일반 친목모임</span>
+            <ol className={s.steps}>
+              <li>오늘 처음 만남</li>
+              <li>술 / 활동</li>
+              <li>인스타 교환</li>
+              <li>언젠가 보자</li>
+              <li className={s.stepEnd}>끝</li>
+            </ol>
           </div>
-          <div className={`${s.card} ${s.cardDark}`}>
-            <span className={s.cardTitle}>다시학교</span>
-            <div className={s.cardFlow}>
-              <span>같은 반 배정</span><span className={s.cardArrow}>↓</span>
-              <span>첫 만남</span><span className={s.cardArrow}>↓</span>
-              <span>다시 만남</span><span className={s.cardArrow}>↓</span>
-              <span>소그룹 만남</span><span className={s.cardArrow}>↓</span>
-              <span>또 만남</span><span className={s.cardArrow}>↓</span>
-              <span className={s.cardEndDark}>친구</span>
-            </div>
+          <div className={`${s.track} ${s.trackUs}`}>
+            <span className={s.trackTitle}>다시학교</span>
+            <ol className={s.steps}>
+              <li>같은 반 배정</li>
+              <li>첫 만남</li>
+              <li>다시 만남</li>
+              <li>소그룹 만남</li>
+              <li>또 만남</li>
+              <li className={s.stepEnd}>친구</li>
+            </ol>
           </div>
         </div>
       </section>
