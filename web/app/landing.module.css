@@ -171,6 +171,28 @@
   margin: 0;
   font-weight: 700;
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statSub {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+/* 0기 안내: 정가 취소선 + 0기 무료 */
+.priceWas {
+  color: #b0b8c1;
+  font-weight: 500;
+  text-decoration-thickness: 1.5px;
+}
+
+.priceNow {
+  color: var(--accent);
+  font-weight: 800;
 }
 
 .intro {

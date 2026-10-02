@@ -75,7 +75,7 @@ export default function Home() {
           <div><dt>지역</dt><dd>서울</dd></div>
           <div><dt>인원</dt><dd>12~16명</dd></div>
           <div><dt>기간</dt><dd>4주</dd></div>
-          <div><dt>참가비</dt><dd>무료</dd></div>
+          <div><dt>참가비</dt><dd>무료<span className={s.statSub}>0기 한정</span></dd></div>
         </dl>
         <div className={s.stack} style={{ gap: 8 }}>
           <ApplyLink event="hero_apply_click" className={`${s.btn} ${s.btnDark}`}>0기 입학 신청하기</ApplyLink>
@@ -149,11 +149,11 @@ export default function Home() {
           <div><dt>인원</dt><dd>12~16명</dd></div>
           <div><dt>기간</dt><dd>4주</dd></div>
           <div><dt>지역</dt><dd>서울</dd></div>
-          <div><dt>참가비</dt><dd>무료</dd></div>
+          <div><dt>참가비</dt><dd><s className={s.priceWas}>월 30,000원</s> <span className={s.priceNow}>0기 무료</span></dd></div>
           <div><dt>참여 조건</dt><dd>4주 중 최소 3회 이상 참여 가능</dd></div>
           <div><dt>이름</dt><dd>실명 대신 짧은 닉네임 사용</dd></div>
         </dl>
-        <p className={s.caption}>식사, 카페, 액티비티 등 개인 이용 비용은 각자 부담해요.</p>
+        <p className={s.caption}>정식 1기부터는 한 달 모임비 3만원이 있어요. 0기는 베타라 받지 않아요.<br />식사, 카페, 액티비티 등 개인 이용 비용은 기수와 상관없이 각자 부담해요.</p>
       </section>
 
       <section className={`${s.section} ${s.alt}`} style={{ gap: 32 }}>
@@ -248,7 +248,7 @@ export default function Home() {
           <p className={s.finalP}>우리, 다시 같은 반이 되어볼까요?</p>
           <div className={s.finalMeta}>
             <span>다시학교 0기</span>
-            <span>12~16명 · 서울 · 4주 · 무료</span>
+            <span>12~16명 · 서울 · 4주 · 0기 무료</span>
           </div>
           <ApplyLink event="bottom_apply_click" className={`${s.btn} ${s.btnWhite}`}>0기 입학 신청하기</ApplyLink>
           <p className={s.finalNote}>선착순 모집이 아니에요.<br />지원 내용과 참여 가능한 일정을 고려해 반을 구성해요.</p>
