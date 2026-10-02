@@ -32,14 +32,18 @@ export async function POST(req: Request) {
       // Apps Script 는 POST 후 302 로 결과 페이지로 보낸다. 기본값(follow)으로 따라간다.
       signal: AbortSignal.timeout(15_000),
     });
-    const result = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+    const text = await res.text();
+    let result: { ok?: boolean; error?: string } | null = null;
+    try { result = JSON.parse(text); } catch {}
     if (!res.ok || !result?.ok) {
-      console.error('[apply] sheet error', res.status, result);
-      return NextResponse.json({ ok: false, error: 'sheet_failed' }, { status: 502 });
+      // 진단용. JSON 이 아니면(구글 로그인 페이지 등) 배포 권한이 "모든 사용자" 가 아닌 경우가 대부분.
+      const detail = result?.error ?? (text.trim().startsWith('<') ? 'not_json (배포 액세스 권한이 "모든 사용자"인지 확인)' : `http ${res.status}`);
+      console.error('[apply] sheet error', res.status, detail, text.slice(0, 200));
+      return NextResponse.json({ ok: false, error: 'sheet_failed', detail }, { status: 502 });
     }
   } catch (err) {
     console.error('[apply] sheet unreachable', err);
-    return NextResponse.json({ ok: false, error: 'sheet_unreachable' }, { status: 502 });
+    return NextResponse.json({ ok: false, error: 'sheet_unreachable', detail: String(err) }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true, stored: true });
