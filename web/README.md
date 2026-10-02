@@ -15,7 +15,7 @@ npm run build
 - `app/page.tsx` + `app/landing.module.css` + `app/components/` — 랜딩. 헤더(히어로 위 투명 → 스크롤 후 흰 배경), FAQ 아코디언, 하단 고정 CTA(히어로·마지막 CTA 구간에서 숨김), 신청 버튼 클릭 이벤트(gtag).
 - 사진: 히어로 `public/hero.webp` (1280px), 문제 제기 섹션 `public/about.webp` (1080px, 풀블리드 + 흰 글씨). 마지막 CTA `public/final.webp` (1080px). 학생증 예시 사진은 `public/student.webp` (320px 정사각 크롭).
 - `app/rules/page.tsx` + `app/doc.module.css` — 교칙 페이지. 교칙 제목은 `lib/apply.ts` 의 RULES 와 같은 순서로 유지.
-- 미제작 페이지: `/privacy` (링크만 있음).
+- `app/privacy/page.tsx` — 개인정보 안내. 수집 항목은 신청 폼 필드와 맞춰둘 것.
 
 ## 신청 데이터 저장 (구글 시트)
 
