@@ -139,6 +139,13 @@ export default function ApplyForm() {
               {st.hint && <p className={s.hint}>{st.hint}</p>}
             </div>
 
+            {st.key === 'insta' && (
+              <a href="https://instagram.com/dasihakkyo" target="_blank" rel="noreferrer" className={s.tip}>
+                <span className={s.tipLabel}>TIP</span>
+                <span>공식 계정 <strong>@dasihakkyo</strong>를 팔로우해도 선정 확률이 올라가요. 팔로우하러 가기 →</span>
+              </a>
+            )}
+
             {st.type === 'text' && (
               <input
                 className={s.input}

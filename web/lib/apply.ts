@@ -51,7 +51,7 @@ export const STEPS: Step[] = [
   { key: 'reason', type: 'textarea', title: '다시학교에 신청하는 이유가 궁금해요.', hint: '길지 않아도 괜찮아요. 요즘 어떤 마음인지 편하게 적어주세요.', placeholder: '예: 회사 밖에서 편하게 볼 수 있는 친구가 있었으면 해서요.' },
   { key: 'contact', type: 'text', title: '결과를 알려드릴 연락처를 남겨주세요.', hint: '전화번호 또는 카카오톡 ID. 반 배정 안내에만 써요.', placeholder: '010-0000-0000 또는 카카오 ID', maxLength: 40 },
   { key: 'email', type: 'text', title: '이메일 주소도 하나 적어주세요.', hint: '연락이 닿지 않을 때 보조로 사용해요.', placeholder: 'name@example.com', inputType: 'email', maxLength: 80 },
-  { key: 'insta', type: 'text', title: '인스타그램 계정이 있다면 알려주세요.', hint: '선택 사항이에요. 비워두셔도 돼요.', placeholder: '@', optional: true, maxLength: 40 },
+  { key: 'insta', type: 'text', title: '인스타그램 계정이 있다면 알려주세요.', hint: '선택 사항이에요. 공개 계정이면 반을 구성할 때 참고할 수 있어서 선정 확률이 올라가요.', placeholder: '@', optional: true, maxLength: 40 },
   { key: 'source', type: 'choice', title: '다시학교는 어떻게 알게 되셨어요?', options: ['인스타그램', '지인 소개', '검색', '커뮤니티 · 블로그', '기타'] },
   { key: 'consent', type: 'consent', title: '마지막으로, 교칙을 확인해주세요.', hint: '편하게 친해지기 위해 다 같이 지키는 약속이에요.' },
 ];
